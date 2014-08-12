@@ -1,0 +1,18 @@
+// Definition of the path from the compiled CSS files to the image files
+@function imagePath($image) {
+	@return '../images/' + $image;
+}
+
+// Import Mixins
+@import "mixins/colors";
+@import "mixins/general";
+@import "mixins/text";
+@import "mixins/backgrounds";
+@import "mixins/flex";
+@import "mixins/animations";
+
+@import "variables";
+@import "../lib-config";
+@import "reset";
+@import "tags";
+@import "classes";
