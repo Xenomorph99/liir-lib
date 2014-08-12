@@ -1,11 +1,10 @@
-// GLOBAL CLASSES USED THROUGHOUT THE SITE
+// GLOBAL CLASSES
 
-/* -------------------- GLOBAL CLASSES -------------------- */
-.wrapper {
-	@include size(960);
-	margin: auto;
+
+/* -------------------- ELEMENT DISPLAY STYLES -------------------- */
+.hidden {
+	@include settings(null, null, none);
 }
-
 
 
 /* -------------------- ELEMENT POSITION STYLES -------------------- */
@@ -29,7 +28,21 @@
 	margin-left: auto;
 	margin-right: auto;
 }
-
+.alignleft {
+	@extend .left;
+	margin: #{$baseLineHeight}px #{$baseLineHeight}px #{$baseLineHeight}px 0;
+}
+.alignright {
+	@extend .right;
+	margin: #{$baseLineHeight}px 0 #{$baseLineHeight}px #{$baseLineHeight}px;
+}
+.aligncenter {
+	@extend .center;
+	@include settings(null, null, block);
+}
+.alignnone {
+	@extend .aligncenter;
+}
 
 
 /* -------------------- TYPOGRAPHIC STYLES -------------------- */
