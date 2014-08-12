@@ -77,6 +77,26 @@ strong {
 em {
 	font-style: italic;
 }
+blockquote {
+	@include font(($baseFontSize + 20), ($baseLineHeight + 26), $headerFontWeight);
+	margin-bottom: #{($baseLineHeight + 26) * 0.5}px;
+	font-style: italic;
+	strong {
+		font-weight: $headerFontWeightStrong;
+	}
+	p {
+		@include font(($baseFontSize + 20), ($baseLineHeight + 26), $headerFontWeight);
+		margin-bottom: 0;
+		&:before {
+			content: "“";
+			@include settings(relative, null, inline-block);
+		}
+		&:after {
+			content: "”";
+			@include settings(relative, null, inline-block);
+		}
+	}
+}
 
 
 /* -------------------- TAGS ASSOCIATED WITH LISTS -------------------- */
