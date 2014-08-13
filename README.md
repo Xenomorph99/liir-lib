@@ -2,6 +2,7 @@
 ============
 A pear flavored SCSS library.
 
+
 Installation
 ------------
 1. Create a new directory called `lib` inside your SCSS directory.  (You can call the new directory anything you want just make sure you're consistant.)
@@ -27,19 +28,21 @@ Installation
 	$ cp _variables.scss ../_lib-config.scss
 	```
 
-4. Include the `lib/_liir.scss` file in your project and you're good to go.
+4. Open the new `_lib-config.scss` file you created in the parent directory with your favorite text editor and change the variable defininitions to your heart's content.
+
+5. Include the `lib/_liir.scss` file in your project and you're good to go.
 
 	```scss
 	@import "lib/liir";
 	```
 
-5. _Optional:_ If you ONLY want access to Лийр's mixin library you can choose to include `lib/mixins/_config.scss` instead of `lib/_liir.scss` in your project.
+6. _Optional:_ If you ONLY want access to Лийр's mixin library you can choose to include `lib/mixins/_config.scss` instead of `lib/_liir.scss` in your project.
 
 	```scss
 	@import "lib/mixins/config";
 	```
 
-6. _Optional:_ Add the `lib` directory to your `.gitignore` file if you don't want the Лийр Library to be stored in your project repo.
+7. _Optional:_ Add the `lib` directory to your `.gitignore` file if you don't want the Лийр Library to be stored in your project repo.
 
 
 Change Log
