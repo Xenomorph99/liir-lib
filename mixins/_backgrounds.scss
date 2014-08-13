@@ -1,3 +1,13 @@
+// MIXINS USED FOR DEFINING HTML ELEMENT BACKGROUNDS
+//
+// @package		Лийр Library (liir)
+// @author		Colton James Wiscombe <colton@hazardmediagroup.com>
+// @copyright	2014 Hazard Media Group LLC
+// @license		MIT License - http://www.opensource.org/licenses/mit-license.html
+// @link		https://github.com/Alekhen/liir-lib
+// @version		Release: 1.0
+
+
 // Used as a shorthand for setting the background of an element
 @mixin bg($color:null, $image:null, $horiz:center, $vert:center, $repeat:no-repeat) {
 	@if $color == null {

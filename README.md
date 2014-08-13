@@ -21,10 +21,10 @@ Installation
 	$ git checkout -t origin/master
 	```
 
-3. Copy the `_lib-config-sample.scss` file from the library into the parent directory and rename it as `_lib-config.scss`.  File name and location are important here since the Лийр Library will need to access this file.  `_lib-config.scss` is where you can customize the library's compiled output.
+3. Copy the `_variables.scss` file from the library into the parent directory and rename it as `_lib-config.scss`.  File name and location are important here since the Лийр Library will need to access this file.  `_lib-config.scss` is where you can customize the library's compiled output by overwriting the default variables.
 
 	```bash
-	$ cp _lib-config-sample.scss ../_lib-config.scss
+	$ cp _variables.scss ../_lib-config.scss
 	```
 
 4. Include the `lib/_liir.scss` file in your project and you're good to go.
@@ -33,7 +33,13 @@ Installation
 	@import "lib/liir";
 	```
 
-5. _Optional:_ Add the `lib` directory to your `.gitignore` file if you don't want the Лийр Library to be stored in your project repo.
+5. _Optional:_ If you ONLY want access to Лийр's mixin library you can choose to include `lib/mixins/_config.scss` instead of `lib/_liir.scss` in your project.
+
+	```scss
+	@import "lib/mixins/config";
+	```
+
+6. _Optional:_ Add the `lib` directory to your `.gitignore` file if you don't want the Лийр Library to be stored in your project repo.
 
 
 Change Log
