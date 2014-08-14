@@ -1,6 +1,6 @@
 // VARIABLE DEFINITIONS
 
-// Image directory path from the compiled CSS files to the image files
+// Image directory path from your compiled CSS files to the image files
 $imagePath: "../images/";
 
 // Font Families
@@ -8,12 +8,15 @@ $helvetica: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Hel
 $times: "Times New Roman", Times, Serif;
 $georgia: "Georgia", Serif;
 
-// Font Settings
-$font: $helvetica;
+// Base Font
+$baseFontFamily: $helvetica;
 $baseFontSize: 20;
 $baseLineHeight: 24;
 $baseFontWeight: 100;
 $baseFontWeightStrong: 300;
+
+// Header Font
+$headerFontFamily: $helvetica;
 $headerFontWeight: 700;
 $headerFontWeightStrong: 700;
 
@@ -24,16 +27,19 @@ $tertiary: lightgray;
 $accent: red;
 $support: gainsboro;
 
-// General Variables
+// General Color
 $bodyTextColor: black;
 $bodyBackgroundColor: white;
 $linkColor: blue;
 $linkHoverColor: lightblue;
 $selectionColor: white;
 $selectionBackgroundColor: red;
-$formElementHeight: 20;
 
-// Input Field Variables
+// General Form
+$formElementHeight: 20;
+$formElementFocusGlow: true;
+
+// Form Element: Input
 $inputTextColor: $primary;
 $inputPlaceholderColor: lighten($primary, 10%);
 $inputBackgroundColor: white;
@@ -47,7 +53,7 @@ $inputInvalidFocusBorderColor: crimson;
 $inputInvalidFocusGlowColor: lighten(crimson, 20%);
 $inputBorderRadius: 4px;
 
-// Select Field Variables
+// Form Element: Select
 $selectTextColor: $inputTextColor;
 $selectBackgroundColor: $inputBackgroundColor;
 $selectBorderColor: $inputBorderColor;
@@ -59,7 +65,7 @@ $selectInvalidFocusBorderColor: $inputInvalidFocusBorderColor;
 $selectInvalidFocusGlowColor: $inputInvalidFocusGlowColor;
 $selectBorderRadius: 4px;
 
-// Textarea Field Variables
+// Form Element: Textarea
 $textareaTextColor: $inputTextColor;
 $textareaPlaceholderColor: $inputPlaceholderColor;
 $textareaBackgroundColor: $inputBackgroundColor;
@@ -73,7 +79,7 @@ $textareaInvalidFocusBorderColor: $inputInvalidFocusBorderColor;
 $textareaInvalidFocusGlowColor: $inputInvalidFocusGlowColor;
 $textareaBorderRadius: 4px;
 
-// Button Variables
+// Buttons
 $buttonTextColor: white;
 $buttonBackgroundColor: $accent;
 $buttonBorderColor: darken($accent, 5%);

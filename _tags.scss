@@ -16,7 +16,7 @@ html {
 }
 body {
 	color: $bodyTextColor;
-	@include font($baseFontSize, $baseLineHeight, $baseFontWeight, $font);
+	@include font($baseFontSize, $baseLineHeight, $baseFontWeight, $baseFontFamily);
 	@include aliasing();
 	@include bg($bodyBackgroundColor);
 	@include flexbox();
@@ -35,37 +35,37 @@ body {
 
 /* -------------------- TAGS ASSOCIATED WITH TEXT -------------------- */
 h1 {
-	@include font(($baseFontSize + 32), ($baseLineHeight + 38), $headerFontWeight);
+	@include font(($baseFontSize + 32), ($baseLineHeight + 38), $headerFontWeight, $headerFontFamily);
 	strong {
 		font-weight: $headerFontWeightStrong;
 	}
 }
 h2 {
-	@include font(($baseFontSize + 20), ($baseLineHeight + 26), $headerFontWeight);
+	@include font(($baseFontSize + 20), ($baseLineHeight + 26), $headerFontWeight, $headerFontFamily);
 	strong {
 		font-weight: $headerFontWeightStrong;
 	}
 }
 h3 {
-	@include font(($baseFontSize + 8), ($baseLineHeight + 12), $headerFontWeight);
+	@include font(($baseFontSize + 8), ($baseLineHeight + 12), $headerFontWeight, $headerFontFamily);
 	strong {
 		font-weight: $headerFontWeightStrong;
 	}
 }
 h4 {
-	@include font(($baseFontSize + 6), ($baseLineHeight + 6), $headerFontWeight);
+	@include font(($baseFontSize + 6), ($baseLineHeight + 6), $headerFontWeight, $headerFontFamily);
 	strong {
 		font-weight: $headerFontWeightStrong;
 	}
 }
 h5 {
-	@include font(($baseFontSize + 2), ($baseLineHeight + 2), $headerFontWeight);
+	@include font(($baseFontSize + 2), ($baseLineHeight + 2), $headerFontWeight, $headerFontFamily);
 	strong {
 		font-weight: $headerFontWeightStrong;
 	}
 }
 h6 {
-	@include font($baseFontSize, $baseLineHeight, $headerFontWeight);
+	@include font($baseFontSize, $baseLineHeight, $headerFontWeight, $headerFontFamily);
 	strong {
 		font-weight: $headerFontWeightStrong;
 	}
@@ -179,7 +179,7 @@ label {
 }
 input {
 	color: $inputTextColor;
-	@include font($baseFontSize, $formElementHeight, $baseFontWeight, $font);
+	@include font($baseFontSize, $formElementHeight, $baseFontWeight, $baseFontFamily);
 	font-size: 100%;
 	vertical-align: middle;
 	*overflow: visible;
@@ -224,7 +224,7 @@ input {
 			outline: none;
 			outline: thin dotted \9;
 			/* IE6-9 */
-			@include box-shadow(inset 0 1px 1px black(0.075), 0 0 6px $inputFocusGlowColor);
+			@if $formElementFocusGlow { @include box-shadow(inset 0 1px 1px black(0.075), 0 0 6px $inputFocusGlowColor); }
 		}
 	}
 	&[type="password"] {
@@ -265,7 +265,7 @@ input {
 	}
 	&[type="file"] {
 		@extend input[type="text"];
-		@include font($baseFontSize, $formElementHeight, $baseFontWeight, $font);
+		@include font($baseFontSize, $formElementHeight, $baseFontWeight, $baseFontFamily);
 		line-height: $formElementHeight + 10px;
 		height: $formElementHeight + 10px; // In IE7, the height of the select element cannot be changed by height, only font-size
 		*margin-top: 4px; // For IE7, add top margin to align select with labels
@@ -359,14 +359,14 @@ input {
 			border-color: $inputInvalidBorderColor;
 			&:focus {
 				border-color: $inputInvalidFocusBorderColor;
-				@include box-shadow(0 0 6px $inputInvalidFocusGlowColor);
+				@if $formElementFocusGlow { @include box-shadow(0 0 6px $inputInvalidFocusGlowColor);	}
 			}
 		}
 	}
 }
 button {
 	color: $buttonTextColor;
-	@include font($baseFontSize, $formElementHeight, $baseFontWeight, $font);
+	@include font($baseFontSize, $formElementHeight, $baseFontWeight, $baseFontFamily);
 	font-size: 100%;
 	vertical-align: middle;
 	background-color: $buttonBackgroundColor;
@@ -393,7 +393,7 @@ button {
 }
 select {
 	color: $selectTextColor;
-	@include font($baseFontSize, $formElementHeight, $baseFontWeight, $font);
+	@include font($baseFontSize, $formElementHeight, $baseFontWeight, $baseFontFamily);
 	font-size: 100%;
 	vertical-align: middle;
 	@include bg($selectBackgroundColor);
@@ -425,7 +425,7 @@ select {
 			border-color: $selectInvalidBorderColor;
 			&:focus {
 				border-color: $selectInvalidFocusBorderColor;
-				@include box-shadow(0 0 6px $selectInvalidFocusGlowColor);
+				@if $formElementFocusGlow { @include box-shadow(0 0 6px $selectInvalidFocusGlowColor); }
 			}
 		}
 	}
@@ -435,7 +435,7 @@ option {
 }
 textarea {
 	color: $textareaTextColor;
-	@include font($baseFontSize, $formElementHeight, $baseFontWeight, $font);
+	@include font($baseFontSize, $formElementHeight, $baseFontWeight, $baseFontFamily);
 	font-size: 100%;
 	vertical-align: top;
 	@include bg($textareaBackgroundColor);
@@ -467,13 +467,13 @@ textarea {
 		outline: 0;
 		outline: thin dotted \9;
 		/* IE6-9 */
-		@include box-shadow(inset 0 1px 1px black(0.075), 0 0 8px $textareaFocusGlowColor);
+		@if $formElementFocusGlow { @include box-shadow(inset 0 1px 1px black(0.075), 0 0 8px $textareaFocusGlowColor); }
 		&:invalid {
 			color: $textareaInvalidTextColor;
 			border-color: $textareaInvalidBorderColor;
 			&:focus {
 				border-color: $textareaInvalidFocusBorderColor;
-				@include box-shadow(0 0 6px $textareaInvalidFocusGlowColor);
+				@if $formElementFocusGlow { @include box-shadow(0 0 6px $textareaInvalidFocusGlowColor); }
 			}
 		}
 	}
