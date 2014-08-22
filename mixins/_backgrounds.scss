@@ -94,6 +94,17 @@
 	}
 }
 
+// Used for applying a linear gradient to an element with two unique color stops
+@mixin linear-gradient-custom($color1, $pos1, $color2, $pos2) {
+	background: $color1; // Old browsers
+	background: -moz-linear-gradient(top, $color1 $pos1, $color2 $pos2); // FF3.6+
+	background: -webkit-gradient(linear, left top, left bottom, color-stop($pos1, $color1), color-stop($pos2, $color2)); // Chrome, Safari4+
+	background: -webkit-linear-gradient(top, $color1 $pos1, $color2 $pos2); // Chrome10+, Safari5.1+
+	background: -o-linear-gradient(top, $color1 $pos1, $color2 $pos2); // Opera 11.10+
+	background: -ms-linear-gradient(top, $color1 $pos1, $color2 $pos2); // IE10+
+	background: linear-gradient(to bottom, $color1 $pos1, $color2 $pos2); // W3C
+}
+
 // Used for quickly applying a radial gradient to an element
 @mixin radial-gradient($color1, $color2, $reverse:false) {
 	@if $reverse == false {
