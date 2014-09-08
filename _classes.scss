@@ -81,3 +81,42 @@
 .lowercase {
 	text-transform: lowercase;
 }
+
+
+/* -------------------- BUTTON LINK STYLES -------------------- */
+.button {
+	color: $buttonTextColor;
+	@include font($baseFontSize, $formElementHeight, $baseFontWeight, $baseFontFamily);
+	font-size: 100%;
+	vertical-align: middle;
+	background-color: $buttonBackgroundColor;
+	@include settings(relative, null, inline-block);
+	*overflow: visible;
+	padding: 0 6px;
+	border-radius: $buttonBorderRadius;
+	border: 1px solid $buttonBorderColor;
+	outline: none;
+	cursor: pointer;
+	//-webkit-appearance: button;
+	@include transition(all 200ms ease);
+	&::-moz-focus-inner {
+		padding: 0;
+		border: 0;
+	}
+	&:hover {
+		color: $buttonTextColor;
+		text-decoration: none;
+		background-color: $buttonHoverBackgroundColor;
+		border-color: $buttonHoverBorderColor;
+	}
+	&:active {
+		color: $buttonTextColor;
+		text-decoration: none;
+		background-color: $buttonActiveBackgroundColor;
+		border-color: $buttonActiveBorderColor;
+		@include transition(none);
+	}
+}
+.btn {
+	@extend .button;
+}
