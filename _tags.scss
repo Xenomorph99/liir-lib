@@ -342,9 +342,7 @@ input {
 	}
 	&[type="search"] {
 		@extend input[type="text"];
-		-webkit-box-sizing: content-box;
-		-moz-box-sizing: content-box;
-		box-sizing: content-box;
+		@include box-sizing(content-box);
 		-webkit-appearance: textfield;
 		&::-webkit-search-decoration {
 			-webkit-appearance: none;

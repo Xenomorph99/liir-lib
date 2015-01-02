@@ -43,6 +43,15 @@
 	}
 }
 
+// Used to specify the box-sizing of an element
+@mixin box-sizing($param) {
+	-ms-box-sizing: $param;
+	-o-box-sizing: $param;
+	-moz-box-sizing: $param;
+	-webkit-box-sizing: $param;
+	box-sizing: $param;
+}
+
 // Used to specify unique border sizes to each side of an element
 // NOTE: Pixels only
 @mixin border-size-unique($topSize:1, $rightSize:1, $bottomSize:1, $leftSize:1, $weight:solid, $color:black) {

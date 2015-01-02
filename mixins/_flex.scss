@@ -68,8 +68,17 @@
 	justify-content: $params;
 }
 
-// Used to set the flexbox alignment
-@mixin flexbox-align($params) {
+// Used to set the flexbox item alignment
+@mixin flexbox-align-items($params) {
+	-webkit-box-align-items: $params;
+	-moz-box-align-items: $params;
+	-webkit-align-items: $params;
+	-ms-align-items: $params;
+	align-items: $params;
+}
+
+// Used to set the flexbox content alignment
+@mixin flexbox-align-content($params) {
 	-webkit-box-align-content: $params;
 	-moz-box-align-content: $params;
 	-webkit-align-content: $params;
@@ -135,6 +144,15 @@
 	-webkit-flex: $params;
 	-ms-flex: $params;
 	flex: $params;
+}
+
+// Used to set the alignment of a single flex element
+@mixin flex-align-self($params) {
+	-webkit-box-align-self: $params;
+	-moz-box-align-self: $params;
+	-webkit-align-self: $params;
+	-ms-align-self: $params;
+	align-self: $params;
 }
 
 // Used to set the order number of a flex element

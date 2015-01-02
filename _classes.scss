@@ -10,7 +10,7 @@
 
 /* -------------------- ELEMENT DISPLAY STYLES -------------------- */
 .hidden {
-	@include settings(null, null, none);
+	display: none !important;
 }
 
 
