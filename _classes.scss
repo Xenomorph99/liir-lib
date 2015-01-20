@@ -69,8 +69,14 @@
 .bold {
 	font-weight: bold;
 }
+.strong {
+	@extend strong;
+}
 .italic {
 	font-style: italic;
+}
+.em {
+	@extend em;
 }
 .underline {
 	text-decoration: underline;
@@ -98,6 +104,33 @@
 }
 .h6 {
 	@extend h6;
+}
+.color-primary {
+	color: $primary;
+}
+.color-secondary {
+	color: $secondary;
+}
+.color-tertiary {
+	color: $tertiary;
+}
+.color-accent {
+	color: $accent;
+}
+.color-support {
+	color: $support;
+}
+.quote {
+	&:before {
+		content: "“";
+	}
+	&:after {
+		content: "”";
+	}
+}
+.quote-italic {
+	@extend .quote;
+	font-style: italic;
 }
 
 
